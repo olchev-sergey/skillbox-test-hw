@@ -1,36 +1,41 @@
-import { ChangeEvent } from "react";
-import { USERS } from "../../data";
-import "./UsersPage.css";
-import { Link, useSearchParams } from "react-router-dom";
+import { ChangeEvent } from 'react'
+import { USERS } from '../../data'
+import './UsersPage.css'
+import { Link, useSearchParams } from 'react-router-dom'
 
 export function UsersPage() {
-	const [searchParam, setSearchParam] = useSearchParams();
+  const [searchParam, setSearchParam] = useSearchParams()
 
-	const handleSearchName = (event: ChangeEvent<HTMLInputElement>): void => {
-		const { value } = event.target;
-		setSearchParam({ searchName: value.toLowerCase() });
-	};
+  const handleSearchName = (event: ChangeEvent<HTMLInputElement>): void => {
+    const { value } = event.target
+    setSearchParam({ searchName: value.toLowerCase() })
+  }
 
-	const searchName = searchParam.get("searchName") || "";
+  const searchName = searchParam.get('searchName') || ''
 
-	const filteredUsers = USERS.filter(({ fullName }) =>
-		fullName.toLowerCase().includes(searchName)
-	);
+  const filteredUsers = USERS.filter(({ fullName }) =>
+    fullName.toLowerCase().includes(searchName)
+  )
 
-	return (
-		<div className="usersPage">
-			<div className="users">
-				<label>
-					введите имя{" "}
-					<input type="text" value={searchName} onChange={handleSearchName} />
-				</label>
+  return (
+    <div className="usersPage">
+      <div className="users">
+        <label>
+          введите имя{' '}
+          <input
+            data-testid="NameInput"
+            type="text"
+            value={searchName}
+            onChange={handleSearchName}
+          />
+        </label>
 
-				{filteredUsers.map(({ id, fullName }) => (
-					<Link to={`/users/${id}`} key={id}>
-						{fullName}
-					</Link>
-				))}
-			</div>
-		</div>
-	);
+        {filteredUsers.map(({ id, fullName }) => (
+          <Link to={`/users/${id}`} key={id}>
+            {fullName}
+          </Link>
+        ))}
+      </div>
+    </div>
+  )
 }
