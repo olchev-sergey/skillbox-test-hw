@@ -1,6 +1,6 @@
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
 import { PlaylistInfoPage } from '../PlaylistInfoPage'
-import Router, { BrowserRouter } from 'react-router-dom'
+import Router from 'react-router-dom'
 import { PLAYLISTS } from '../../../data'
 import { renderWithRouter } from '../../../libs/tests'
 
