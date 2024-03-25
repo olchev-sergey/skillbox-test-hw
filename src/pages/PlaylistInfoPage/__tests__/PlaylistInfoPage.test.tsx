@@ -10,6 +10,10 @@ jest.mock('react-router-dom', () => ({
 }))
 
 describe('Тест компонента PlaylistPage', () => {
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
+
   it('Должен отобразить соответсвующий текст при несуществующем playlistId', () => {
     jest.spyOn(Router, 'useParams').mockReturnValue({ playlistId: '100' })
     renderWithRouter(<PlaylistInfoPage />)

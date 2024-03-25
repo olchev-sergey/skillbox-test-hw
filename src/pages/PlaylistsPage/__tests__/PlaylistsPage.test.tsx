@@ -9,6 +9,10 @@ jest.mock('react-router-dom', () => ({
 }))
 
 describe('Тест компонента PlaylistsPage', () => {
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
+
   it('Должен вызвать setSearchParam с теми данными, которые вводятся в input', async () => {
     const cbk = jest.fn()
 
