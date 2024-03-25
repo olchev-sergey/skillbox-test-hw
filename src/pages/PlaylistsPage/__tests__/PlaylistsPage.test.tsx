@@ -19,18 +19,18 @@ describe('Тест компонента PlaylistsPage', () => {
     renderWithRouter(<PlaylistsPage />)
 
     await fireEvent.input(screen.getByTestId('GenreInput'), {
-      target: { value: 'test' },
+      target: { value: 'rock' },
     })
 
-    expect(cbk).toHaveBeenCalledWith({ searchGenre: 'test', searchName: '' })
+    expect(cbk).toHaveBeenCalledWith({ searchGenre: 'rock', searchName: '' })
 
     await fireEvent.input(screen.getByTestId('NameInput'), {
-      target: { value: 'test' },
+      target: { value: 'alex' },
     })
 
     expect(cbk).toHaveBeenCalledWith({
       searchGenre: '',
-      searchName: 'test',
+      searchName: 'alex',
     })
   })
 })

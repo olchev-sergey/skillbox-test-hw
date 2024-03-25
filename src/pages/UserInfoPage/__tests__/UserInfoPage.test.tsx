@@ -10,7 +10,7 @@ jest.mock('react-router-dom', () => ({
 }))
 
 describe('Тест компонента UserInfoPage', () => {
-  it('Должен отобразить текст об отсутсвии пользователя, если не смог найти с переданным userId', () => {
+  it('Должен отобразить текст об отсутсвии пользователя, если не смог найти такого с переданным userId', () => {
     jest.spyOn(Router, 'useParams').mockReturnValue({ userId: '100' })
     renderWithRouter(<UserInfoPage />)
 

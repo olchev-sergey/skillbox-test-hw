@@ -19,9 +19,9 @@ describe('Тест компонента UsersPage', () => {
     renderWithRouter(<UsersPage />)
 
     await fireEvent.input(screen.getByTestId('NameInput'), {
-      target: { value: 'test' },
+      target: { value: 'alex' },
     })
 
-    expect(cbk).toHaveBeenCalledWith({ searchName: 'test' })
+    expect(cbk).toHaveBeenCalledWith({ searchName: 'alex' })
   })
 })

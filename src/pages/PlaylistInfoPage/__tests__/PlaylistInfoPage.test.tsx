@@ -10,8 +10,8 @@ jest.mock('react-router-dom', () => ({
 }))
 
 describe('Тест компонента PlaylistPage', () => {
-  it('Должен отобразить соответсвующий текст, если не может найти playlist с переданным id', () => {
-    jest.spyOn(Router, 'useParams').mockReturnValue({})
+  it('Должен отобразить соответсвующий текст при несуществующем playlistId', () => {
+    jest.spyOn(Router, 'useParams').mockReturnValue({ playlistId: '100' })
     renderWithRouter(<PlaylistInfoPage />)
 
     expect(screen.getByText('плейлист с таким playlistId нет')).toBeDefined()
