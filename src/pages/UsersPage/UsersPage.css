@@ -1,0 +1,18 @@
+.usersPage {
+	color: bisque;
+}
+
+.users {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.users a {
+	color: cornflowerblue;
+	cursor: pointer;
+}
+
+.users a:hover {
+	color: rgb(72, 111, 184);
+}

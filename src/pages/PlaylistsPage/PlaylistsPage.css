@@ -1,0 +1,18 @@
+.playlistsPage {
+	color: bisque;
+}
+
+.playlists {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.playlists a {
+	color: cornflowerblue;
+	cursor: pointer;
+}
+
+.playlists a:hover {
+	color: rgb(72, 111, 184);
+}

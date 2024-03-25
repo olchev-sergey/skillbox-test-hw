@@ -1,0 +1,20 @@
+.playlistInfoPage {
+	color: cyan;
+}
+
+.playlist p {
+	margin: 0;
+}
+
+.playlist a {
+	color: cornflowerblue;
+	cursor: pointer;
+}
+
+.playlist a:hover {
+	color: rgb(72, 111, 184);
+}
+
+.songs p {
+	margin: 0;
+}
